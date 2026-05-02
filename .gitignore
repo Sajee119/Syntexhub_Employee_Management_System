@@ -1,0 +1,97 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+package-lock.json
+yarn.lock
+
+# Environment
+.env
+.env.local
+.env.*.local
+*.env
+
+# Build
+client/dist/
+client/build/
+server/dist/
+server/build/
+.next/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log
+
+# IDE & Editor
+.vscode/
+.idea/
+.DS_Store/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw[op]
+*.swp
+*.swo
+*~
+.vimrc
+.vim/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Testing
+coverage/
+.nyc_output/
+lcov.info
+
+# Cache
+.cache/
+.eslintcache
+.node_repl_history
+.npm/
+.yarn/cache/
+.yarn/install-state.gz
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+.AppleDouble
+.LSOverride
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Misc
+*.pem
+*.key
+*.crt
+*.pfx
+.env.production.local
+.env.test.local
+.env.development.local
+lerna.json
+.prettierignore
+dist/
+build/
+
+# Uploads (keep server/uploads directory but ignore contents)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# User data
+.history/
+.vscode-server/
+*.bak
+*.tmp
+**/temp/
+**/tmp/
