@@ -25,7 +25,7 @@ export default function About() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-6 flex items-center gap-2"><Info /> About</h1>
-      <div className="card max-w-4xl">
+      <div className="card">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-primary-600 mb-2">Employee Management System</h2>
           <p className="text-secondary-500">Version 1.0.0</p>

@@ -7,6 +7,7 @@ import { getAttendance } from '../services/attendanceService';
 import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '../components/DeleteConfirmationModal';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { buildBackendUrl } from '../utils/backendUrl';
 
 export default function EmployeeDetail() {
   const { id } = useParams();
@@ -78,8 +79,7 @@ export default function EmployeeDetail() {
 
   const getImageUrl = (path) => {
     if (!path) return null;
-    if (path.startsWith('http')) return path;
-    return `http://localhost:3001${path}`;
+    return buildBackendUrl(path);
   };
 
   useEffect(() => { fetchData(); }, [id]);
@@ -202,7 +202,7 @@ export default function EmployeeDetail() {
             <div className="relative inline-block">
               <div className="w-24 h-24 rounded-full bg-primary-600 flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4 overflow-hidden">
                 {employee.profilePicture ? (
-                  <img src={`http://localhost:3001${employee.profilePicture}`} alt={employee.name} className="w-full h-full object-cover" />
+                  <img src={getImageUrl(employee.profilePicture)} alt={employee.name} className="w-full h-full object-cover" />
                 ) : (
                   employee.name.charAt(0)
                 )}

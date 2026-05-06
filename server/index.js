@@ -26,9 +26,10 @@ connectDB();
 const app = express();
 const PORT = Number(process.env.PORT) || 5000;
 const httpServer = createServer(app);
+const corsOptions = { origin: true, credentials: true };
 
 const io = new Server(httpServer, {
-  cors: { origin: process.env.CLIENT_URL, credentials: true }
+  cors: corsOptions
 });
 
 io.on('connection', (socket) => {
@@ -41,7 +42,7 @@ app.set('io', io);
 
 if (!fs.existsSync('uploads')) fs.mkdirSync('uploads');
 
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 

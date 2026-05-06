@@ -25,7 +25,7 @@ export default function Account() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-6">Account Settings</h1>
-      <div className="card max-w-3xl">
+      <div className="card">
         <div className="flex items-center gap-6 mb-8 pb-6 border-b border-secondary-200 dark:border-secondary-700">
           <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
             {getInitials(user.name)}

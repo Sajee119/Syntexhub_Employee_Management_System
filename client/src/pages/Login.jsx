@@ -51,7 +51,6 @@ export default function Login() {
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary-400" size={18} />
                 <input
                   type="email"
-                  value={email}
                   onChange={e => setEmail(e.target.value)}
                   className="input-field pl-10"
                   placeholder="Enter your email"
@@ -66,7 +65,6 @@ export default function Login() {
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary-400" size={18} />
                 <input
                   type={showPassword ? 'text' : 'password'}
-                  value={password}
                   onChange={e => setPassword(e.target.value)}
                   className="input-field pl-10 pr-10"
                   placeholder="Enter your password"
@@ -103,14 +101,6 @@ export default function Login() {
             </button>
           </form>
 
-          <div className="mt-6 p-4 bg-secondary-50 dark:bg-secondary-700/50 rounded-lg">
-            <p className="text-xs font-medium text-secondary-500 mb-2">Demo Credentials:</p>
-            <div className="space-y-1">
-              <p className="text-sm"><span className="text-secondary-500">Email:</span> admin@employeems.com</p>
-              <p className="text-sm"><span className="text-secondary-500">Password:</span> qwerty123</p>
-            </div>
-          </div>
-
           <div className="mt-8 pt-6 border-t border-secondary-200 dark:border-secondary-700">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
@@ -128,10 +118,6 @@ export default function Login() {
             </div>
           </div>
         </div>
-
-        <p className="text-center text-sm text-secondary-500 mt-6">
-          © 2026 Employee Management System. All rights reserved.
-        </p>
       </div>
     </div>
   );

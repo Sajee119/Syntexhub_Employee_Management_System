@@ -297,7 +297,7 @@ npm install
 
 Create `.env` file in the server directory (copy from `.env.example`):
 ```env
-PORT=3001
+PORT=5000
 MONGO_URI=your_mongodb_atlas_connection_string
 JWT_SECRET=your_jwt_secret_key
 SMTP_HOST=smtp.gmail.com
@@ -316,7 +316,7 @@ npm install
 
 Create `.env` file in the client directory (copy from `.env.example`):
 ```env
-VITE_API_URL=http://localhost:3001
+VITE_API_URL=http://localhost:5000
 VITE_APP_NAME=Employee Management System
 ```
 
@@ -334,7 +334,7 @@ node seed.js
 cd server
 npm run dev
 ```
-Server runs on: `http://localhost:3001`
+Server runs on: `http://localhost:5000`
 
 #### Terminal 2 - Frontend Development Server
 ```bash
@@ -409,13 +409,13 @@ npm start
 ## 🔧 Troubleshooting
 
 ### Backend Won't Start
-- Check if port 3001 is available: `netstat -an | grep 3001`
+- Check if port 5000 is available: `netstat -an | grep 5000`
 - Verify MongoDB connection string in `.env`
 - Ensure all dependencies are installed: `npm install`
 - Check server logs for error messages
 
 ### Frontend Won't Connect to Backend
-- Verify backend is running on port 3001
+- Verify backend is running on port 5000
 - Check `VITE_API_URL` in client `.env`
 - Clear browser cache and cookies
 - Check browser console for CORS errors
@@ -442,7 +442,7 @@ npm start
 ### Server (.env)
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `PORT` | Server port | `3001` |
+| `PORT` | Server port | `5000` |
 | `MONGO_URI` | MongoDB connection string | `mongodb://...` |
 | `JWT_SECRET` | JWT signing secret | `your-secret-key` |
 | `SMTP_HOST` | SMTP server host | `smtp.gmail.com` |
@@ -455,7 +455,7 @@ npm start
 ### Client (.env)
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `VITE_API_URL` | Backend API URL | `http://localhost:3001` |
+| `VITE_API_URL` | Backend API URL | `http://localhost:5000` |
 | `VITE_APP_NAME` | Application name | `Employee Management System` |
 
 ## 🤝 Contributing
