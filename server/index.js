@@ -58,6 +58,10 @@ app.use('/api/performance', performanceRoutes);
 app.use('/api/transfers', transferRoutes);
 app.use('/api/announcements', announcementRoutes);
 
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 app.use(notFound);
 app.use(errorHandler);
 
