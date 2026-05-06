@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import Cookies from 'js-cookie';
 import { AuthContext, AuthProvider } from './context/AuthContext';
 import { SocketProvider } from './context/SocketContext';
@@ -19,12 +19,6 @@ import About from './pages/About';
 import NetworkError from './pages/NetworkError';
 import PageNotFound from './pages/PageNotFound';
 import BackendWarmupGate from './components/BackendWarmupGate';
-import useServerHealthCheck from './hooks/useServerHealthCheck';
-
-function ServerHealthMonitor() {
-  useServerHealthCheck(300000);
-  return null;
-}
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useContext(AuthContext);
@@ -34,12 +28,7 @@ function ProtectedRoute({ children }) {
   const requires2FA = Cookies.get('requires2FA');
   if (requires2FA) return <Navigate to="/2fa" />;
 
-  return (
-    <>
-      <ServerHealthMonitor />
-      {children}
-    </>
-  );
+  return children;
 }
 
 function PublicRoute({ children }) {

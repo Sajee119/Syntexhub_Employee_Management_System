@@ -4,7 +4,6 @@ import App from './App.jsx';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-
 import { startServerHealthPing } from './utils/serverHealth.js';
 
 startServerHealthPing(300000);
